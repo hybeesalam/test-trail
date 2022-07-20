@@ -4,15 +4,44 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Html forms</title>
+	<script type="text/javascript">
+		const greeting= function(){
+			alert('Thank you for banking with us!');
+		}
+
+		function myFunction() {
+			var x = document.getElementById("myInput");
+			if (x.type === "password") {
+				x.type = "text";
+		}  else{
+			x.type ="password";
+		}
+
+	}
+
+	</script>
+	<style type="text/css">
+		*{
+			color: blueviolet;
+		}
+		.bio{
+			margin-bottom: 10px;
+		}
+	</style>	
 </head>
 <body>
-	<form action="https://www.torilo.co.uk/student-info.js" autocomplete ="on"method="POST">
+	<form action="#" method="POST" autocomplete="on">
 		<h2>Torilo student Registeration</h2>
-		<h3>Bio</h3>
+		<fieldset>
+			<legend>Bio</legend>
 		<label for="first">first name:</label>
-		<input type="text" name="fn" id="first"><br>
+		<input class="bio" name="fn" id="first">
+		<br>
 		<label for="last">last name:</label>
-		<input type="text" name="fn" id="last name">
+		<input class="bio" name="fn" id="last name">
+		<br>
+			<label for="dob">Time of Birth</label>
+			<input type="datetime-local" name="" id="dob"
 		<br><br>
 		<span>Gender</span>
 
@@ -23,8 +52,11 @@
 		<label for="female">female</label>
 		<input type="radio" name="gender" id="gender" value="agenda">
 		<label for="agender">agenda</label><br>
+	</fieldset>
 		<br><br>
-		<h3>How many dependant do you have?</h3>
+
+		<fieldset>
+			<legend>How many dependant do you have? </legend>
 		<input type="checkbox" name="dependant" id="one" value="1">
 		<label for="one">1</label>
 		<input type="checkbox" name="dependant" id="two" value="2">
@@ -36,9 +68,12 @@
 		<br><br>
 		<label>Email:</label>
 		<input type="email" name="">
-		<input type="submit">
+	</fieldset>
 
-        <h3>chose your blood group: </h3>
+		
+
+        <fieldset>
+        	<legend>choose your blood group</legend>
         <label for="bg" nam>Blood Groups: </label>
         <select id="bg" name="blood_group">
         	<option value="1">AB+</option>
@@ -46,8 +81,52 @@
         	<option value="3">O+</option>
         	<option value="4">B+</option>
         	<option value="5">JS</option>
+
+        	
+
+
+
+        </select>
+
+    </fieldset>
+
+        <br>
+        <fieldset>
+        <legend>Tell us a little about yourself</legend>
+        <label for="ta">write here: </label><textarea name="about" rows="10" cols="20"></textarea>
+        <br><br>
+        <h4>What is your favorite food? </h4>
+        <datalist id="food">
+        	<option value="Amala"/>
+        	<option value="oporopo"/>
+        	<option value="Tuwo Shinkafa"/>
+        	<option value="eba"/>
+        </datalist>
+        <input list="food">
+        <h3>Create a username and password</h3>
+        <label id="username">Username</label>
+        <input type="text" name="" id="username">
+        <label for="myInput">password</label>
+        <input type="password" name="" id="myInput">
+        <input type="checkbox" onclick="myFunction()">show password
+
+    </fieldset>
+
+    <label for="reset">Reset your inputs</label>
+    <input type="reset" id="reset">
+    <br><br>
+        <button onclick="greeting('Thank you for the response')">submit</button>
+       <!-- <input type="submit"> -->
+
+        	
+
+
+
+
     
-	</form>
+    </form>
+
+	
 
 </body>
 </html>
